@@ -34,10 +34,9 @@
     };
   }
 
-if(window.Worker) {
-
-}
-var myWorker = new Worker('worker.js');
+//if(window.Worker) {
+  var myWorker = new Worker('scripts/worker.js');
+//}
 
   function manipulateImage(type) {
     var a, b, g, i, imageData, j, length, pixel, r, ref;
@@ -63,7 +62,8 @@ var myWorker = new Worker('worker.js');
     toggleButtonsAbledness();
     return ctx.putImageData(imageData, 0, 0);
  */
-    myWorker.postMessage({"imageData": imageData});
+    myWorker.postMessage({"imageData": imageData,
+                          "type": type});
     console.log('passed');
 
   };
