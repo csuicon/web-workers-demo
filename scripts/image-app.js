@@ -35,8 +35,9 @@
   }
 
 if(window.Worker) {
-  var myWorker = new Worker('worker.js');
+
 }
+var myWorker = new Worker('worker.js');
 
   function manipulateImage(type) {
     var a, b, g, i, imageData, j, length, pixel, r, ref;
